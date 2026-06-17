@@ -155,7 +155,7 @@ hr.animated {
   z-index: 999; /* Ensure it stays above all other content */
   
   /* Subtle grain transparency */
-  opacity: 0.16; 
+  opacity: 0.18; 
 
   /* Inline SVG generating the noise */
   background-image: url(/static/images/noise.jpg);

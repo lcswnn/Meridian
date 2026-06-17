@@ -26,6 +26,10 @@
   </div>
   <div id="text-space1">
     <p>Today's Pick:</p>
+    <p>Last updated: {{ ozone.last_updated }}</p>
+    <p>Current reading: {{ ozone.current_du }} DU</p>
+    <div class="progress-bar" style="width: {{ ozone.progress }}%"></div>
+    <p>{{ ozone.progress }}% recovered</p>
   </div>
   <div id="cards">
     <p id="text-space1">Other Progress:</p>
