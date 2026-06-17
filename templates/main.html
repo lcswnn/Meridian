@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
   <title>GOODTREND</title>
 </head>
 <body>
@@ -25,11 +26,25 @@
     <h3 id="home-subheader" class="fadeInDown-animation">Positive Progress. Quantified.</h3>
   </div>
   <div id="text-space1">
-    <p>Today's Pick:</p>
-    <p>Last updated: {{ ozone.last_updated }}</p>
-    <p>Current reading: {{ ozone.current_du }} DU</p>
-    <div class="progress-bar" style="width: {{ ozone.progress }}%"></div>
-    <p>{{ ozone.progress }}% recovered</p>
+    <p>Today's Pick: <strong>Ozone Layer Recovery</strong></p>
+
+    <div class="progress-card">
+      <div class="progress-label">
+        <span>Ozone Recovery Progress</span>
+        <span>{{ ozone.progress }}%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="ozone-bar"></div>
+      </div>
+      <div class="progress-meta">
+        <span>{{ ozone.current_du }} DU current</span>
+        <span>300 DU target</span>
+      </div>
+    </div>
+
+    <p style="font-size: 0.85rem; color: #888; text-align: center;">
+      Reading date: {{ ozone.reading_date }} &nbsp;·&nbsp; Last fetched: {{ ozone.last_updated }}
+    </p>
   </div>
   <div id="cards">
     <p id="text-space1">Other Progress:</p>
@@ -37,5 +52,17 @@
   </div>
 
   <div class="grain-overlay"></div>
+
+  <script>
+    window.addEventListener('load', function () {
+      const bar = document.getElementById('ozone-bar');
+      const targetWidth = {{ ozone.progress }};
+
+      // Small delay so the animation is visible after page paint
+      setTimeout(function () {
+        bar.style.width = targetWidth + '%';
+      }, 300);
+    });
+  </script>
 </body>
 </html>
