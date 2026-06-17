@@ -3,45 +3,57 @@
   --secondary-color: #2D728F;
   --thirdary-color: #BD897E;
   --background-color: #faf9f7;
-  --text-color: #0D160B;
+  --black: #0D160B;
 }
 
 html, body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
 }
 
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 15px 50px;
+  background-color: var(--primary-color);
+  width: 100%;                  
+  box-sizing: border-box;
+  border-bottom: 3px solid var(--black);
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
   display: flex;
+  margin: 0;                    
+  padding: 0;                   
+}
+
+li {
+  padding: 0px 30px; /* adds spacing between the links */
 }
 
 ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
+  color: var(--background-color); 
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 ul li a:hover {
-  background-color: #111111;
+  color: var(--black);   
 }
 
 #home-title {
-  color: var(--text-color);
+  color: var(--black);
   text-align: center;
   margin-top: 80px;
-  font-size: 5.3rem;
+  margin-bottom: 0px;
+  font-size: 5.5rem;
   font-weight: 700;
 }
 
@@ -49,18 +61,27 @@ ul li a:hover {
   width: 60%; /* Sets the custom width of the line */
   max-width: 1050px; 
   height: 4px; /* Sets the thickness */
-  background-color: var(--text-color); /* Sets the color */
+  background-color: var(--black); /* Sets the color */
   border: none; /* Removes default browser borders */
   margin: 2px auto; /* First value handles spacing; second handles alignment */
 }
 /* --- END OF UNDERLINE --- */
 
 #home-subheader {
-  color: var(--text-color);
+  color: var(--black);
   text-align: center;
   margin-top: 30px;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 500;
+}
+
+#text-space1 {
+  width: 100%;
+  max-width: 1050px;
+  margin: 50px auto;
+  padding: 0px 20px;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 
@@ -69,7 +90,7 @@ ul li a:hover {
 /* --- IGNORE ANIMATIONS --- */
 @keyframes fadeInUp {
   0% {
-    transform: translateY(55%);
+    transform: translateY(30%);
     opacity: 0;
   }
   100% {
